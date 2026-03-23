@@ -1,0 +1,52 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [
+    {
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": { "udp": true }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "udp-xhttp-h3",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "45.148.28.12",
+            "port": 4443,
+            "users": [
+              {
+                "id": "b2577269-db40-4a04-98bd-f8c5896c4aba",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "netflowapp.lol",
+          "allowInsecure": true,
+          "alpn": ["h3"]
+        },
+        "xhttpSettings": {
+          "path": "/dnstt-h3-4443/",
+          "host": "netflowapp.lol",
+          "mode": "stream-one"
+        }
+      }
+    },
+    { "tag": "direct", "protocol": "freedom", "settings": {} }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [{ "type": "field", "network": "tcp,udp", "outboundTag": "udp-xhttp-h3" }]
+  }
+}

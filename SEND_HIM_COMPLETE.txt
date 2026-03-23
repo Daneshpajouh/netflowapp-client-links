@@ -1,0 +1,28 @@
+Verified 2026-03-23: direct VPN (443/4443/4444), DNS router (:53), dnstm tunnels running.
+
+--- 1) SIMPLEST: paste this ONE line into the app (subscription / import Base64) ---
+dmxlc3M6Ly9iNDI5NzUyYS02NzA1LTQ4YjEtOWQ1OC0yYTQ2OGYxNGNhM2FANDUuMTQ4LjI4LjEyOjQ0Mz9lbmNyeXB0aW9uPW5vbmUmZmxvdz14dGxzLXJwcngtdmlzaW9uJnNlY3VyaXR5PXJlYWxpdHkmc25pPXd3dy5taWNyb3NvZnQuY29tJmZwPWNocm9tZSZwYms9NUFMekVWUHlTNlVNVUJ6X2JPcDI3VmRsa0VHOXFMTkgwdTI5WDFaZUttUSZzaWQ9YTFiMmMzZDQmdHlwZT10Y3AmaGVhZGVyVHlwZT1ub25lI1RDUC1SRUFMSVRZLVZpc2lvbgp2bGVzczovL2IyNTc3MjY5LWRiNDAtNGEwNC05OGJkLWY4YzU4OTZjNGFiYUA0NS4xNDguMjguMTI6NDQ0Mz9lbmNyeXB0aW9uPW5vbmUmc2VjdXJpdHk9dGxzJnR5cGU9eGh0dHAmcGF0aD0lMkZkbnN0dC1oMy00NDQzJTJGJmhvc3Q9bmV0Zmxvd2FwcC5sb2wmbW9kZT1zdHJlYW0tb25lJmFscG49aDMmc25pPW5ldGZsb3dhcHAubG9sJmZwPWNocm9tZSZhbGxvd0luc2VjdXJlPTEjVURQLVZMRVNTLVhIVFRQLUgzCmh5c3RlcmlhMjovL05ldGZsb3dIeTJVZHAyMDI2a2V5QDQ1LjE0OC4yOC4xMjo0NDQ0Lz9pbnNlY3VyZT0xJnNuaT1uZXRmbG93YXBwLmxvbCNVRFAtSHlzdGVyaWEyCg==
+
+NOTE: If the line above fails checksum, use output/subscription_all_nodes.base64.txt from the repo (regenerated from subscription_all_nodes.txt).
+
+--- 2) Same three nodes as separate links (if Base64 not supported) ---
+A) TCP REALITY — try first, Mux OFF:
+vless://b429752a-6705-48b1-9d58-2a468f14ca3a@45.148.28.12:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.microsoft.com&fp=chrome&pbk=5ALzEVPyS6UMUBz_bOp27VdlkEG9qLNH0u29X1ZeKmQ&sid=a1b2c3d4&type=tcp&headerType=none#TCP-REALITY-Vision
+
+B) UDP VLESS XHTTP H3:
+vless://b2577269-db40-4a04-98bd-f8c5896c4aba@45.148.28.12:4443?encryption=none&security=tls&type=xhttp&path=%2Fdnstt-h3-4443%2F&host=netflowapp.lol&mode=stream-one&alpn=h3&sni=netflowapp.lol&fp=chrome&allowInsecure=1#UDP-VLESS-XHTTP-H3
+
+C) UDP Hysteria2:
+hysteria2://NetflowHy2Udp2026key@45.148.28.12:4444/?insecure=1&sni=netflowapp.lol#UDP-Hysteria2
+
+--- 3) DNS tunnel path (SlipNet Android + second app chain) — optional ---
+SlipNet import (tap link or paste):
+slipnet://MTZ8ZG5zdHR8eC5uZXRmbG93YXBwLmxvbHx4Lm5ldGZsb3dhcHAubG9sfDguOC44Ljg6NTM6MHwwfDUwMDB8YmJyfDEwODB8MTI3LjAuMC4xfDB8ZDY4OWIxYjlhNmRkMzcxOTZkYTNkNDQ4NzE4YzRiYzYxNjg5ZTQwZmY4MGZkMzhiMzhlZmNlNWEyMzE5YWY3Znx8fDB8fHwyMnwwfDEyNy4wLjAuMXwwfHx1ZHB8cGFzc3dvcmR8fHwwfDB8NDQzfHx8MHx8MHwwfA==
+
+Then in V2Box/Nekobox etc. add this VLESS (chain via SOCKS 127.0.0.1:1080 after SlipNet proxy-only mode):
+vless://faf77170-16f5-47e9-bd25-9a8f7323e48c@127.0.0.1:32553?encryption=none&type=tcp&security=none#DNSTT-vless
+
+Resolver in SlipNet: 8.8.8.8 or 1.1.1.1 (port 53). Details: https://github.com/SamNet-dev/dnstm-setup
+
+--- Short Farsi ---
+همه سرویس‌ها بالا است. ساده‌ترین کار: همان یک خط Base64 بالا را در اپ import کن. اگر DNS تونل می‌خواهی: لینک slipnet را در SlipNet بزن و بعد VLESS دوم را از طریق SOCKS محلی وصل کن.
