@@ -1,4 +1,8 @@
-Verified 2026-03-23: direct VPN (443/4443/4444), DNS router (:53), dnstm tunnels running.
+Verified 2026-03-23: TCP REALITY :443, VLESS+XHTTP-H3 :4443/udp, Hy2 :4444/udp, dnstm :53 + all tunnels, 3x-ui panel; sshd 127.0.0.1:22 for SSH-style dnstm backends.
+
+--- 0) PUBLIC subscription URL (reachable from anywhere; paste as subscription source) ---
+https://raw.githubusercontent.com/Daneshpajouh/netflowapp-client-links/main/subscription.base64.txt
+Repo (files + README): https://github.com/Daneshpajouh/netflowapp-client-links
 
 --- 1) SIMPLEST: paste this ONE line into the app (subscription / import Base64) ---
 dmxlc3M6Ly9iNDI5NzUyYS02NzA1LTQ4YjEtOWQ1OC0yYTQ2OGYxNGNhM2FANDUuMTQ4LjI4LjEyOjQ0Mz9lbmNyeXB0aW9uPW5vbmUmZmxvdz14dGxzLXJwcngtdmlzaW9uJnNlY3VyaXR5PXJlYWxpdHkmc25pPXd3dy5taWNyb3NvZnQuY29tJmZwPWNocm9tZSZwYms9NUFMekVWUHlTNlVNVUJ6X2JPcDI3VmRsa0VHOXFMTkgwdTI5WDFaZUttUSZzaWQ9YTFiMmMzZDQmdHlwZT10Y3AmaGVhZGVyVHlwZT1ub25lI1RDUC1SRUFMSVRZLVZpc2lvbgp2bGVzczovL2IyNTc3MjY5LWRiNDAtNGEwNC05OGJkLWY4YzU4OTZjNGFiYUA0NS4xNDguMjguMTI6NDQ0Mz9lbmNyeXB0aW9uPW5vbmUmc2VjdXJpdHk9dGxzJnR5cGU9eGh0dHAmcGF0aD0lMkZkbnN0dC1oMy00NDQzJTJGJmhvc3Q9bmV0Zmxvd2FwcC5sb2wmbW9kZT1zdHJlYW0tb25lJmFscG49aDMmc25pPW5ldGZsb3dhcHAubG9sJmZwPWNocm9tZSZhbGxvd0luc2VjdXJlPTEjVURQLVZMRVNTLVhIVFRQLUgzCmh5c3RlcmlhMjovL05ldGZsb3dIeTJVZHAyMDI2a2V5QDQ1LjE0OC4yOC4xMjo0NDQ0Lz9pbnNlY3VyZT0xJnNuaT1uZXRmbG93YXBwLmxvbCNVRFAtSHlzdGVyaWEyCg==

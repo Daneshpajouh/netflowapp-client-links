@@ -3,6 +3,8 @@
 Public subscription files for **netflowapp.lol** client apps (V2Box, Shadowrocket, etc.).  
 No server credentials — only client share links.
 
+**Bundle sync:** 2026-03-23 — matches operator `subscription_all_nodes` + XHTTP-H3 JSON + SEND pack.
+
 ## Use in your app (subscription URL)
 
 Paste this URL where the app asks for a **subscription link** (Base64):
